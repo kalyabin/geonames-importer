@@ -1,9 +1,18 @@
 /vendor/
 
-.DS_Store
-
-# ignore IDE specific files and dirs
+# phpstorm project files
 .idea
-.settings
-.project
+
+# netbeans project files
+nbproject
+
+# zend studio for eclipse project files
 .buildpath
+.project
+.settings
+
+# windows thumbnail cache
+Thumbs.db
+
+# Mac DS_Store Files
+.DS_Store
