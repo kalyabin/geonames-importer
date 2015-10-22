@@ -1,0 +1,9 @@
+/vendor/
+
+.DS_Store
+
+# ignore IDE specific files and dirs
+.idea
+.settings
+.project
+.buildpath
