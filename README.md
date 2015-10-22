@@ -1,6 +1,10 @@
 # Geonames.org importer API
 CSV data importer from geonames.org
 
+Use open CSV base from geonames:
+- cities bases (cities5000.zip, cities15000.zip, RU.zip, US.zip, etc.)
+- countries base
+
 ## Installation
 
 Run in your console
