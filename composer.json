@@ -16,5 +16,11 @@
             "name": "Max Kalyabin",
             "email": "maksim@kalyabin.ru"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4" : {
+            "kalyabin\\geonames\\" : ""
+        }
+    }
+
 }
