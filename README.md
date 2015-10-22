@@ -1,4 +1,4 @@
-# geonames-import
+# Geonames.org importer API
 CSV data importer from geonames.org
 
 ## Installation
