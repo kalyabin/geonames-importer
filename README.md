@@ -4,6 +4,7 @@ CSV data importer from geonames.org
 Use open CSV base from geonames:
 - cities bases (cities5000.zip, cities15000.zip, RU.zip, US.zip, etc.)
 - countries base
+- states base (admin1code.csv)
 
 ## Installation
 
@@ -12,9 +13,8 @@ Run in your console
 php composer.phar require "kalyabin/geonames-importer" "dev-master"
 ```
 
-## Basic usage
+## Import all countries
 
-To import all countries use:
 ```php
 $importer = new \kalyabin\geonames\importer\Country('/tmp/', function($country) {
     print 'Consume country: ' . "\n";
@@ -25,7 +25,8 @@ $importer = new \kalyabin\geonames\importer\Country('/tmp/', function($country) 
 $importer->process();
 ```
 
-To import cities use:
+## Import cities
+
 ```php
 $importer = new \kalyabin\geonames\importer\City('/tmp/', 'cities5000.zip', function($city) {
     print 'Consume city: ' . "\n";
@@ -35,6 +36,17 @@ $importer = new \kalyabin\geonames\importer\City('/tmp/', 'cities5000.zip', func
 });
 $importer->process();
 ```
+You may type second param like RU.zip, US.zip, cities15000.zip, etc.
 
-More about geonames open base read at http://download.geonames.org/export/dump/readme.txt
-For export cities data you may type second param like RU.zip, US.zip, cities15000.zip, etc. 
+## Import states
+
+```php
+$importer = new \kalyabin\geonames\importer\Admin1CodeASCII('/tmp/', function($region) {
+    fwrite(STDOUT, "Consume region: ");
+    print_r($region);
+    fwrite(STDOUT, "\n");
+});
+$importer->process();
+```
+
+More about geonames open base read at http://download.geonames.org/export/dump/readme.txt 
