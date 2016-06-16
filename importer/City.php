@@ -205,7 +205,8 @@ class City
     {
         $fh = fopen($this->csvFilePath, 'r');
         try {
-            while ($row = fgetcsv($fh, 0, $this->columnsSeparator, $this->columnsEnclosure, $this->escape)) {
+            while (($row = fgets($fh)) !== false) {
+                $row = str_getcsv($row, $this->columnsSeparator, $this->columnsEnclosure, $this->escape);
                 if (count($row) == count($this->columns) && count($row) == self::COLUMNS_COUNT) {
                     $city = array_combine($this->columns, $row);
                     call_user_func_array($this->rowConsumer, [$city]);

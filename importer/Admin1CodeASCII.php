@@ -200,7 +200,8 @@ class Admin1CodeASCII
     {
         $fh = fopen($this->downloadedFilePath, 'r');
         try {
-            while ($row = fgetcsv($fh, 0, $this->columnsSeparator, $this->columnsEnclosure, $this->escape)) {
+            while (($row = fgets($fh)) !== false) {
+                $row = str_getcsv($row, $this->columnsSeparator, $this->columnsEnclosure, $this->escape);
                 if (!$this->checkIsColumnDifenition($row) && $this->checkIsRow($row)) {
                     $this->consumeRow($row);
                 }

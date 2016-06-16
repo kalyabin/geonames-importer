@@ -3,7 +3,7 @@
     "description": "CSV data importer from geonames.org",
     "type": "package",
     "version": "dev-master",
-    "reference": "e6259727b001c4c2566b7767a765b876",
+    "reference": "31a1b446e1fac31082788faca75c03c7",
     "keywords": ["kalyabin", "geonames", "cities database", "countries database"],
     "require": {
         "php": ">=5.4.0",
